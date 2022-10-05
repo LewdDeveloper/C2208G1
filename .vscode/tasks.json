@@ -9,8 +9,8 @@
                 "/EHsc",
                 "/nologo",
                 "/utf-8",
-                "/Fe${fileDirname}",
-                "/Fd${fileDirname}",
+                "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
+                // "/Fd${fileDirname}\\${fileBasenameNoExtension}.obj",
                 "${file}"
             ],
             "options": {
