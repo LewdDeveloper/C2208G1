@@ -5,12 +5,67 @@
             "label": "C/C++: cl.exe build active file",
             "command": "cl.exe",
             "args": [
+                "/EHsc",
+                "/nologo",
+                "/utf-8",
+                // "/std:${config:C_Cpp.default.cppStandard}",
+                "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "${file}",
+                "/link",
+                "/DEBUG:NONE"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": ""
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: cl.exe build active file with debug flags",
+            "command": "cl.exe",
+            "args": [
+                "/ZI",
                 "/Zi",
                 "/EHsc",
                 "/nologo",
                 "/utf-8",
                 "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
-                // "/Fd${fileDirname}\\${fileBasenameNoExtension}.obj",
+                "${file}",
+                "/link",
+                "/DEBUG:FULL",
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": ""
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: cl.exe build active file with optimization flags",
+            "command": "cl.exe",
+            "args": [
+                "/Zi",
+                "/EHsc",
+                "/nologo",
+                "/utf-8",
+                "/Ot",
+                "/GA",
+                "/GL",
+                "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
                 "${file}"
             ],
             "options": {

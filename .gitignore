@@ -1,6 +1,5 @@
-*.code-workspace
-*.vscode/settings.json
-*.lik
+*.ilk
 *.exe
 *.obj
 *.pdb
+*.code-workspace
