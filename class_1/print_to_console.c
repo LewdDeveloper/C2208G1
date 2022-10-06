@@ -73,16 +73,25 @@ void pyramid(int rows)
 
 void diamond_pyramid(int rows)
 {
-
 }
 
 void star_mold(int rows)
 {
-
 }
 
-void unk(int rows) {
-    
+void unk(int rows)
+{
+    for (int i = 1; i <= rows; i++)
+    {
+        if (i % 2 == 0) {
+            printf(" ");
+        }
+        for (int j = 1; j <= rows; j++)
+        {
+            printf("* ");
+        }
+        printf("\n");
+    }
 }
 
 void box()
@@ -133,4 +142,5 @@ int main(void)
     star_mold(c);
     box();
     doggie();
+    unk(c);
 }

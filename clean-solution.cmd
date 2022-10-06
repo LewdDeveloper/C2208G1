@@ -1,0 +1,1 @@
+powershell.exe -File "%CD%\clean-solution.ps1"

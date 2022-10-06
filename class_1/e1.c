@@ -1,0 +1,68 @@
+#include <stdio.h>
+
+int main(void)
+{
+    printf("A\n");
+    printf("B C\n");
+    printf("D E F\n");
+    printf("G H I J\n");
+    printf("K L M N O\n");
+    puts("");
+    printf("*                    *\n");
+    printf("* *                * *\n");
+    printf("* * *            * * *\n");
+    printf("* * * *        * * * *\n");
+    printf("* * * * *    * * * * *\n");
+    printf("* * * * *    * * * * *\n");
+    printf("* * * *        * * * *\n");
+    printf("* * *            * * *\n");
+    printf("* *                * *\n");
+    printf("*                    *\n");
+    puts("");
+    printf("* * * * *   * * * * *\n");
+    printf("* * * *       * * * *\n");
+    printf("* * *           * * *\n");
+    printf("* *               * *\n");
+    printf("*                   *\n");
+    printf("*                   *\n");
+    printf("* *               * *\n");
+    printf("* * *           * * *\n");
+    printf("* * * *       * * * *\n");
+    printf("* * * * *   * * * * *\n");
+    puts("");
+    printf("        *\n");
+    printf("      * * *\n");
+    printf("    * * * * *\n");
+    printf("  * * * * * * *\n");
+    printf("* * * * * * * * *\n");
+    printf("* * * * * * * * *\n");
+    printf("  * * * * * * *\n");
+    printf("    * * * * *\n");
+    printf("      * * *\n");
+    printf("        *\n");
+    puts("");
+    printf("* * * * *\n");
+    printf("*       *\n");
+    printf("*       *\n");
+    printf("*       *\n");
+    printf("* * * * *\n");
+    puts("");
+    printf("* * * * *\n");
+    printf(" * * * * *\n");
+    printf("* * * * *\n");
+    printf(" * * * * *\n");
+    printf("* * * * *\n");
+    puts("");
+    printf("    *\n");
+    printf("   ***\n");
+    printf("  *****\n");
+    printf(" *******\n");
+    printf("*********\n");
+    puts("");
+    printf("          '__' \n");
+    printf("          (oo) \n");
+    printf("  +========\\/ \n");
+    printf(" / || %%%%%% ||   \n");
+    printf("*  ||-----||   \n");
+    printf("   \"\"     \"\"   \n");
+}
