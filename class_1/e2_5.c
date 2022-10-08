@@ -24,7 +24,7 @@ int main()
     printf("Percentage: ");
     for (int i = 0; i < 5; i++)
     {
-        printf("%d (%d%%); ", numbers[i], numbers[i] * 100 / sum);
+        printf("%d (%f%%); ", numbers[i], numbers[i] * 100.f / sum);
     }
     printf("\n");
 }
