@@ -1,1 +1,2 @@
-powershell.exe -File "%CD%\clean-solution.ps1"
+del /S /P "%CD%\*.exe"
+del /S /P "%CD%\*.obj"

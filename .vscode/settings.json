@@ -1,4 +1,8 @@
 {
     "C_Cpp.default.cStandard": "c17",
     "C_Cpp.default.cppStandard": "c++17",
+    "files.exclude": {
+        "Developer ** for vscode 2022.lnk": true,
+        "clean-solution.**": true
+    },
 }
