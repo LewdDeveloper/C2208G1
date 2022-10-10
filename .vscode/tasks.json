@@ -5,14 +5,15 @@
             "label": "C/C++: cl.exe build active file",
             "command": "cl.exe",
             "args": [
+                "/Zi",
                 "/EHsc",
                 "/nologo",
                 "/utf-8",
                 // "/std:${config:C_Cpp.default.cppStandard}",
                 "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
                 "${file}",
-                "/link",
-                "/DEBUG:NONE"
+                // "/link",
+                // "/DEBUG:NONE"
             ],
             "options": {
                 "cwd": "${fileDirname}"

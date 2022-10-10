@@ -1,6 +1,5 @@
 {
     "configurations": [
-        
         {
             "name": "(Windows) Attach",
             "type": "cppvsdbg",

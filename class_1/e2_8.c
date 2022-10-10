@@ -2,7 +2,6 @@
 
 int main()
 {
-
     double a = 12345.6789;
     printf("\nFormatting with %%e or %%E\n");
     printf("%e\n", a);
