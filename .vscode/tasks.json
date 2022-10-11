@@ -4,8 +4,9 @@
             "type": "shell",
             "label": "Shell: Clear solution",
             "windows": {
-                "command": ".\\scripts\\test.cmd"
-            }
+                "command": ".\\clean-solution.ps1 0"
+            },
+            "problemMatcher": []
         },
         {
             "type": "cppbuild",
@@ -16,11 +17,8 @@
                 "/EHsc",
                 "/nologo",
                 "/utf-8",
-                // "/std:${config:C_Cpp.default.cppStandard}",
                 "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
-                "${file}",
-                // "/link",
-                // "/DEBUG:NONE"
+                "${file}"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -47,7 +45,7 @@
                 "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
                 "${file}",
                 "/link",
-                "/DEBUG:FULL",
+                "/DEBUG:FULL"
             ],
             "options": {
                 "cwd": "${fileDirname}"
