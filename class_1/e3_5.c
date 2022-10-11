@@ -2,13 +2,12 @@
 
 int main()
 {
-    int ordinal, dozen;
+    int ordinal, teen;
     int is_teen_digit;
     printf("Enter value: ");
     scanf("%d", &ordinal);
-    dozen = ordinal % 100;
-    is_teen_digit = dozen >= 10 && dozen <= 19;
-    if (is_teen_digit)
+    teen = (ordinal % 100) / 10 == 1;
+    if (teen)
     {
         printf("%dth", ordinal);
     }
