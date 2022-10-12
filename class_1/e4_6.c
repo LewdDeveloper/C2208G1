@@ -9,6 +9,7 @@ int main()
         scanf("%d", &x);
         if (x < 0)
         {
+            printf("You should enter a positive number!\n");
             continue;
         }
         for (int y = 1; y <= x; y++)
