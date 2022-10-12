@@ -8,7 +8,7 @@ int main()
     {
         printf("Enter a positive integer : ");
         scanf("%d", &x);
-        if (x < 0)
+        if (x <= 0)
         {
             break;
         }
