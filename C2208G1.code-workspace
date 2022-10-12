@@ -6,10 +6,10 @@
 	],
 	"settings": {
 		"[json]": {
-			"editor.defaultFormatter": "vscode.json-language-features"
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
 		},
 		"[jsonc]": {
-			"editor.defaultFormatter": "vscode.json-language-features"
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
 		},
 		"files.associations": {
 			"stdio.h": "c",

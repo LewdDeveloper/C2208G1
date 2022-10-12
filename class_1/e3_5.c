@@ -3,7 +3,6 @@
 int main()
 {
     int ordinal, teen;
-    int is_teen_digit;
     printf("Enter value: ");
     scanf("%d", &ordinal);
     teen = (ordinal % 100) / 10 == 1;

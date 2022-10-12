@@ -1,31 +1,21 @@
 {
-    "env": {
-        "includePath": [
-            "${workspaceFolder}/**"
-        ],
-        "defines": []
-    },
-    "configurations": [
-        {
-            "name": "Win32",
-            "intelliSenseMode": "windows-msvc-x64",
-            "compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.33.31629/bin/Hostx64/x64/cl.exe",
-            "includePath": [
-                "${env:includePath}"
-            ],
-            "defines": [
-                "${env:defines}",
-                "UNICODE",
-                "_UNICODE"
-            ],
-            "compileCommands": "",
-            "browse": {
-                "path": [
-                    "${workspaceFolder}"
-                ],
-                "limitSymbolsToIncludedHeaders": true,
-            }
-        }
-    ],
-    "version": 4
+  "env": {
+    "includePath": ["${workspaceFolder}/**"],
+    "defines": []
+  },
+  "configurations": [
+    {
+      "name": "Win32",
+      "intelliSenseMode": "windows-msvc-x64",
+      "compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.33.31629/bin/Hostx64/x64/cl.exe",
+      "includePath": ["${env:includePath}"],
+      "defines": ["${env:defines}", "UNICODE", "_UNICODE"],
+      "compileCommands": "",
+      "browse": {
+        "path": ["${workspaceFolder}"],
+        "limitSymbolsToIncludedHeaders": true
+      }
+    }
+  ],
+  "version": 4
 }
