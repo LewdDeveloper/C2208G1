@@ -2,7 +2,7 @@
 
 ## This repo contains homework answer :)
 
-1. EPC - C
+1. EPC - C : Logic Building and Elementary Programming
 
 - [X] 03-Oct-22
 - [X] 07-Oct-22
