@@ -10,9 +10,9 @@
 - [X] 12-Oct-22
 - [X] 14-Oct-22
 
-[vscheatsheet.com](Learn vscode keyboard shortcuts)
+[vscheatsheet.com]()
 
-[screenshot.help](take a good screenshot, will you)
+[screenshot.help]()
 
 `Program in C`
 
