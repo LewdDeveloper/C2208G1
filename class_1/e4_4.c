@@ -2,7 +2,7 @@
 
 int main()
 {
-    int x, min = 0, max = 0, sum = 0, count = 0;
+    int x = 0, min = 0, max = 0, sum = 0, count = 0;
     float avg = 0;
     do
     {
@@ -17,7 +17,7 @@ int main()
                 max = x;
             }
             else
-            {   
+            {
                 if (x > max)
                 {
                     max = x;
@@ -30,7 +30,6 @@ int main()
             sum += x;
             avg = 1.0f * sum / count;
         }
-
     } while (x > 0);
     printf("Number of positive values entered is %d\n", count);
     printf("Maximum value entered is %d\n", max);
