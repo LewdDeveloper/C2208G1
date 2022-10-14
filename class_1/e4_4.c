@@ -17,7 +17,7 @@ int main()
                 max = x;
             }
             else
-            {
+            {   
                 if (x > max)
                 {
                     max = x;

@@ -32,8 +32,8 @@ void printMenu()
                 printf("You have selected %c\n", selection);
                 toContinue();
             case '7':
+                            printf("You have selected %c\n", selection);
                 running = 0;
-                break;
             default:
                 printf("Please enter your selection: ");
                 unexpected_input = 1;
