@@ -1,6 +1,12 @@
 #include <stdio.h>
 
 void toContinue();
+void printMenu();
+
+int main()
+{
+    printMenu();
+}
 
 void printMenu()
 {
@@ -70,9 +76,4 @@ void toContinue()
         } while (unexpected_input && running);
     }
     return;
-}
-
-int main()
-{
-    printMenu();
 }

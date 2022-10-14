@@ -1,5 +1,25 @@
 #include <stdio.h>
 
+void drawCircle();
+void drawTriangle();
+void drawRectangle();
+void drawInvertedV();
+
+int main()
+{
+    drawTriangle();
+    drawRectangle();
+    drawInvertedV();
+
+    drawCircle();
+    drawRectangle();
+    drawInvertedV();
+
+    drawCircle();
+    drawTriangle();
+    drawInvertedV();
+}
+
 void drawTriangle(void)
 {
     printf("   *\n");
@@ -31,19 +51,4 @@ void drawInvertedV(void)
     printf("  * *\n");
     printf(" *   *\n");
     printf("*     *\n");
-}
-
-int main()
-{
-    drawTriangle();
-    drawRectangle();
-    drawInvertedV();
-
-    drawCircle();
-    drawRectangle();
-    drawInvertedV();
-
-    drawCircle();
-    drawTriangle();
-    drawInvertedV();
 }

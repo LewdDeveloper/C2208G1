@@ -1,10 +1,7 @@
 #include <stdio.h>
 
 // https://learn.microsoft.com/en-us/office/troubleshoot/excel/determine-a-leap-year
-int isLeapYear(int year)
-{
-    return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
-}
+int isLeapYear(int);
 
 int main()
 {
@@ -27,4 +24,9 @@ int main()
             printf("It is NOT a leap year.\n");
         }
     } while (1);
+}
+
+int isLeapYear(int year)
+{
+    return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
 }

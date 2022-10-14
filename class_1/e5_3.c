@@ -1,9 +1,6 @@
 #include <stdio.h>
 
-double fToC(double f)
-{
-    return (f - 32) / 9 * 5;
-}
+double fToC(double);
 
 int main()
 {
@@ -12,4 +9,9 @@ int main()
     scanf("%Lf", &f);
     c = fToC(f);
     printf("Temp %g in Fahrenheit = %.2Lf Celsius", f, c);
+}
+
+double fToC(double f)
+{
+    return (f - 32) / 9 * 5;
 }

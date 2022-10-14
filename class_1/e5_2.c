@@ -1,9 +1,6 @@
 #include <stdio.h>
 
-double inchToCm(double inch) 
-{
-    return inch * 2.54;
-}
+double inchToCm();
 
 int main() {
     double inch, cm;
@@ -11,4 +8,9 @@ int main() {
     scanf("%Lf", &inch);
     cm = inchToCm(inch);
     printf("%.2Lf inches = %.2Lf cm", inch, cm);
+}
+
+double inchToCm(double inch) 
+{
+    return inch * 2.54;
 }
