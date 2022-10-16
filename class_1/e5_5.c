@@ -9,13 +9,9 @@ int main()
     {
         printf("Enter 3 integers: ");
         scanf("%d %d %d", &a, &b, &c);
-        if (a == b || a == c || b == c)
-        {
-            break;
-        }
         smallest = getSmallest(a, b, c);
         printf("%d is the smallest.\n", smallest);
-    } while (1);
+    } while (!(a == b || a == c || b == c));
 }
 
 int getSmallest(int first, int second, int third)
