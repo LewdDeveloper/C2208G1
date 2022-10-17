@@ -5,6 +5,7 @@ void printMenu();
 
 int main()
 {
+    int s1 = 0, s2 = 0;
     char selection = 0, has_exit_condition = 0, show_menu = 1;
     while (!(has_exit_condition))
     {
@@ -12,19 +13,19 @@ int main()
         {
             printMenu();
         }
-        switch (selection)
+        switch (s1)
         {
-        case '1':
-        case '2':
-        case '3':
-        case '4':
-        case '5':
-        case '6':
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
             printf("You have selected %c\n", selection);
             do
             {
                 toContinue();
-                scanf("%s", &selection);
+                scanf(" %c", &selection);
                 switch (selection)
                 {
                 case 'c':
@@ -41,14 +42,14 @@ int main()
                 }
             } while (!(show_menu) && !(has_exit_condition));
             break;
-        case '7':
-            printf("You have selected %c\n", selection);
+        case 7:
+            printf("You have selected %d\n", s1);
             has_exit_condition = 1;
             break;
         default:
             show_menu = 0;
             printf("Please enter your selection: ");
-            scanf("%s", &selection);
+            scanf("%d", &s1);
         }
     }
     return;
