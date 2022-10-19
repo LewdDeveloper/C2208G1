@@ -2,7 +2,7 @@
 
 int main()
 {
-    int x, *x_ptr;
+    int x , *x_ptr;
     x_ptr = &x;
     do
     {

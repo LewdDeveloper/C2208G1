@@ -7,12 +7,12 @@ int main()
     gender_ptr = &gender;
     weight_ptr = &weight;
     height_ptr = &height;
+    bmi_ptr = &bmi;
     printf("Enter your gender (0 for female, 1 for male) : ");
     scanf("%d", gender_ptr);
     printf("Enter your weight (kg) and height (m) : ");
     scanf("%f %f", weight_ptr, height_ptr);
-    bmi = *weight_ptr / ((*height_ptr) * (*height_ptr));
-    bmi_ptr = &bmi;
+    *bmi_ptr = *weight_ptr / ((*height_ptr) * (*height_ptr));
     switch (*gender_ptr)
     {
     case 0:
