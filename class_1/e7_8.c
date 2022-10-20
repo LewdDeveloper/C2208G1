@@ -5,7 +5,10 @@ void partition(int[], int, int);
 int main()
 {
     int size = 5;
-    int arr[] = {3, 9, 30, 13, 32};  // {37, 13, 37, 10, 9};
+    int arr[] = {37, 13, 37, 10, 9};
+    // {3, 9, 30, 13, 32}; 
+    // {37, 13, 37, 10, 9};
+    // {31, 7, 25, 22, 2};
     int pivot = 11;
 
     printf("Less than or equal %d: ", pivot);
@@ -39,24 +42,46 @@ int main()
 
 void partition(int arr[], int size, int pivot)
 {
-    int shallow[5], j = 0, k = (size - 1);
+    int shallow[5], j = 0;
     for (int i = 0; i < size; i++)
     {
         shallow[i] = arr[i];
     }
-    for (int i = 0; i < size; i++)
-    {
-        if (pivot < shallow[i])
-        {
-            printf("\nLarger to right: %d - %d", i, shallow[i]);
-            arr[k - i] = shallow[i];
-        }
-        else
-        {
-                        printf("\nLarger to right: %d - %d", i, shallow[i]);
-            arr[j] = shallow[i];
-            j++;
-        }
-    }
+
+    // int k = (size - 1);
+    // for (int i = 0; i < size; i++)
+    // {
+    //     if (pivot < shallow[i])
+    //     {
+    //         arr[k] = shallow[i];
+    //         k--;
+    //     }
+    //     else
+    //     {
+    //         arr[j] = shallow[i];
+    //         j++;
+    //     }
+    // }
+
+    // int largerThanPivot[5];
+    // int k = 0;
+    // for (int i = 0; i < size; i++)
+    // {
+    //     if (pivot < shallow[i])
+    //     {
+    //         largerThanPivot[k] = shallow[i];
+    //         k++;
+    //     }
+    //     else
+    //     {
+    //         arr[j] = shallow[i];
+    //         j++;
+    //     }
+    // }
+    // for (int i = 0; i < k; i++)
+    // {
+    //     arr[j+i] = largerThanPivot[i];
+    // }
+
     return;
 }
