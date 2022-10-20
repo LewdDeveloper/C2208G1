@@ -5,7 +5,7 @@ void partition(int[], int, int);
 int main()
 {
     int size = 5;
-    int arr[] = {37, 13, 37, 10, 9};
+    int arr[] = {3, 9, 30, 13, 32};  // {37, 13, 37, 10, 9};
     int pivot = 11;
 
     printf("Less than or equal %d: ", pivot);
@@ -23,6 +23,11 @@ int main()
         {
             printf("%d ", arr[i]);
         }
+    }
+    printf("\nOriginal array : ");
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d ", arr[i]);
     }
     partition(arr, size, pivot);
     printf("\nModified array : ");
@@ -43,10 +48,12 @@ void partition(int arr[], int size, int pivot)
     {
         if (pivot < shallow[i])
         {
+            printf("\nLarger to right: %d - %d", i, shallow[i]);
             arr[k - i] = shallow[i];
         }
         else
         {
+                        printf("\nLarger to right: %d - %d", i, shallow[i]);
             arr[j] = shallow[i];
             j++;
         }
