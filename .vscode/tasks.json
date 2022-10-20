@@ -1,14 +1,6 @@
 {
   "tasks": [
     {
-      "type": "shell",
-      "label": "Shell: Clear solution",
-      "windows": {
-        "command": ".\\clean-solution.ps1 0"
-      },
-      "problemMatcher": []
-    },
-    {
       "type": "cppbuild",
       "label": "C/C++: cl.exe build active file",
       "command": "cl.exe",
@@ -17,14 +9,15 @@
         "/EHsc",
         "/nologo",
         "/utf-8",
-        // "/std:${config:C_Cpp.default.cStandard}",
         "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
         "${file}"
       ],
       "options": {
         "cwd": "${fileDirname}"
       },
-      "problemMatcher": ["$msCompile"],
+      "problemMatcher": [
+        "$msCompile"
+      ],
       "group": {
         "kind": "build",
         "isDefault": true
@@ -33,26 +26,25 @@
     },
     {
       "type": "cppbuild",
-      "label": "C/C++: cl.exe build active file with debug flags",
-      "command": "cl.exe",
+      "label": "C/C++: clang-cl.exe build active file",
+      "command": "clang-cl.exe",
       "args": [
-        "/ZI",
         "/Zi",
         "/EHsc",
         "/nologo",
         "/utf-8",
         "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
-        "${file}",
-        "/link",
-        "/DEBUG:FULL"
+        "${file}"
       ],
       "options": {
         "cwd": "${fileDirname}"
       },
-      "problemMatcher": ["$msCompile"],
+      "problemMatcher": [
+        "$msCompile"
+      ],
       "group": {
         "kind": "build",
-        "isDefault": true
+        "isDefault": false
       },
       "detail": ""
     },
@@ -68,19 +60,30 @@
         "/Ot",
         "/GA",
         "/GL",
+        // "/std:${config:C_Cpp.default.cStandard}",
         "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
         "${file}"
       ],
       "options": {
         "cwd": "${fileDirname}"
       },
-      "problemMatcher": ["$msCompile"],
+      "problemMatcher": [
+        "$msCompile"
+      ],
       "group": {
         "kind": "build",
-        "isDefault": true
+        "isDefault": false
       },
       "detail": ""
-    }
+    },
+    {
+      "type": "shell",
+      "label": "Shell: Clear solution",
+      "windows": {
+        "command": ".\\clean-solution.ps1 0"
+      },
+      "problemMatcher": []
+    },
   ],
   "version": "2.0.0"
 }
