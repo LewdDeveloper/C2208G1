@@ -9,8 +9,6 @@ int main()
     printf("Sum of last 3 array element = %d", sumLast3(arr, 10));
 }
 
-// incase it wasn't obvious, in C array index starts from 0
-//                           note for people coming from lua background.
 int sumLast3(int arr[], int size)
 {
     int sum = 0, j = 0;

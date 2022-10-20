@@ -1,8 +1,18 @@
 {
     "C_Cpp.default.cStandard": "c17",
     "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
     "files.exclude": {
         "Developer ** for vscode 2022.lnk": true,
         "clean-solution.**": true
-    },
+    }
 }

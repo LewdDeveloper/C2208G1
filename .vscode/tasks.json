@@ -1,91 +1,86 @@
 {
-    "tasks": [
-        {
-            "type": "shell",
-            "label": "Shell: Clear solution",
-            "windows": {
-                "command": ".\\clean-solution.ps1 0"
-            },
-            "problemMatcher": []
-        },
-        {
-            "type": "cppbuild",
-            "label": "C/C++: cl.exe build active file",
-            "command": "cl.exe",
-            "args": [
-                "/Zi",
-                "/EHsc",
-                "/nologo",
-                "/utf-8",
-                "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
-                "${file}"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$msCompile"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "detail": ""
-        },
-        {
-            "type": "cppbuild",
-            "label": "C/C++: cl.exe build active file with debug flags",
-            "command": "cl.exe",
-            "args": [
-                "/ZI",
-                "/Zi",
-                "/EHsc",
-                "/nologo",
-                "/utf-8",
-                "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
-                "${file}",
-                "/link",
-                "/DEBUG:FULL"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$msCompile"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "detail": ""
-        },
-        {
-            "type": "cppbuild",
-            "label": "C/C++: cl.exe build active file with optimization flags",
-            "command": "cl.exe",
-            "args": [
-                "/Zi",
-                "/EHsc",
-                "/nologo",
-                "/utf-8",
-                "/Ot",
-                "/GA",
-                "/GL",
-                "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
-                "${file}"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$msCompile"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "detail": ""
-        }
-    ],
-    "version": "2.0.0"
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "Shell: Clear solution",
+      "windows": {
+        "command": ".\\clean-solution.ps1 0"
+      },
+      "problemMatcher": []
+    },
+    {
+      "type": "cppbuild",
+      "label": "C/C++: cl.exe build active file",
+      "command": "cl.exe",
+      "args": [
+        "/Zi",
+        "/EHsc",
+        "/nologo",
+        "/utf-8",
+        // "/std:${config:C_Cpp.default.cStandard}",
+        "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
+        "${file}"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$msCompile"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": ""
+    },
+    {
+      "type": "cppbuild",
+      "label": "C/C++: cl.exe build active file with debug flags",
+      "command": "cl.exe",
+      "args": [
+        "/ZI",
+        "/Zi",
+        "/EHsc",
+        "/nologo",
+        "/utf-8",
+        "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
+        "${file}",
+        "/link",
+        "/DEBUG:FULL"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$msCompile"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": ""
+    },
+    {
+      "type": "cppbuild",
+      "label": "C/C++: cl.exe build active file with optimization flags",
+      "command": "cl.exe",
+      "args": [
+        "/Zi",
+        "/EHsc",
+        "/nologo",
+        "/utf-8",
+        "/Ot",
+        "/GA",
+        "/GL",
+        "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
+        "${file}"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$msCompile"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": ""
+    }
+  ],
+  "version": "2.0.0"
 }
