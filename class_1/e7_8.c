@@ -2,8 +2,6 @@
 
 void partition(int[], int, int);
 
-// constexpr never exist (copium)
-
 int main()
 {
     int size = 5;
