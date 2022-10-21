@@ -11,10 +11,14 @@ int main()
 
 int sumLast3(int arr[], int size)
 {
-    int sum = 0, j = 0;
-    for (int i = (size - 1); i >= 0 && j < 3; i--, j++)
+    int k = (size - 1);
+    int sum = 0;
+    if (k >= 0)
     {
-        sum += arr[i];
+        for (int i = k; i > k - 3 && i >= 0; i--)
+        {
+            sum += arr[i];
+        }
     }
     return sum;
 }

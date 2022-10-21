@@ -9,7 +9,8 @@
 			"stdio.h": "c",
 			"stdlib.h": "c",
 			"vector": "cpp",
-			"xstring": "cpp"
+			"xstring": "cpp",
+			"stdint.h": "c"
 		},
 		"explorer.autoReveal": false
 	}

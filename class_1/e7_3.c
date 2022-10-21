@@ -4,13 +4,16 @@ int greatestSum(int[], int);
 
 int main()
 {
-    int arr[] = {-8, -9, -8, 37, 6, 37};
-    printf("the greatest sum is %d", greatestSum(arr, 3));
+    int arr[] = {38, 39, -8, 7, 6, 37};
+    printf("the greatest sum is %d", greatestSum(arr, 6));
 }
 
-// naive solution for desired teacher
 int greatestSum(int arr[], int size)
 {
+    if (size < 1)
+    {
+        return 0;
+    }
     int i;
     int highestNumIndex = 0, min = arr[0], sum = arr[0];
     for (i = 1; i < size; i++)
@@ -40,7 +43,6 @@ int greatestSum(int arr[], int size)
     }
     else
     {
-        // if code reached here that means teacher is pen-testing 
         min = 0;
     }
     sum += min;
