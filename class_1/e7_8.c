@@ -48,20 +48,20 @@ void partition(int arr[], int size, int pivot)
         shallow[i] = arr[i];
     }
 
-    // int k = (size - 1);
-    // for (int i = 0; i < size; i++)
-    // {
-    //     if (pivot < shallow[i])
-    //     {
-    //         arr[k] = shallow[i];
-    //         k--;
-    //     }
-    //     else
-    //     {
-    //         arr[j] = shallow[i];
-    //         j++;
-    //     }
-    // }
+    int k = (size - 1);
+    for (int i = 0; i < size; i++)
+    {
+        if (pivot < shallow[i])
+        {
+            arr[k] = shallow[i];
+            k--;
+        }
+        else
+        {
+            arr[j] = shallow[i];
+            j++;
+        }
+    }
 
     // int largerThanPivot[5];
     // int k = 0;
