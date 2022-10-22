@@ -45,7 +45,7 @@ void rearrange(char word[])
         {
             word[j] = vowels[j];
         }
-        for (int i = 0, padding = CountVowels; i < CountVowels; i++)
+        for (int i = 0, padding = CountVowels; i < countConsonant; i++)
         {
             word[i + padding] = consonant[i];
         }
