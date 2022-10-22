@@ -5,30 +5,44 @@ int countWords(char[]);
 
 int main()
 {
-    printf("Word count : %d\n", countWordsSeperatedBySingleSpace("today                          is a     good day"));
-    printf("Word count : %d", countWords("today                          is a     good day"));
+    printf("Word count : %d\n", countWordsSeperatedBySingleSpace("Sunday, 17th January 2019"));
+    printf("Word count : %d\n", countWords("a               Sunday, 17th               January 2019"));
 }
 
 int countWordsSeperatedBySingleSpace(char arr[])
 {
-    int count = strlen(arr);
-    int words = 0;
-    int wasLastCharNotSpace = 1;
-    for (int i = 0; i < count; i++)
+    int count = strlen(arr), words = 0;
+
+    for (int cursor = 0; cursor < count; cursor++)
     {
-        if (arr[i] == ' ' && wasLastCharNotSpace)
+        while (!isspace(arr[cursor]))
         {
-            wasLastCharNotSpace = 0;
-            words++;
-            continue;
+            cursor++;
         }
-        wasLastCharNotSpace = 1;
+        if (isspace(arr[cursor]))
+        {
+            cursor++;
+        }
+        words++;
     }
+
     return words;
 }
+
 int countWords(char arr[])
 {
-    int count = strlen(arr);
-    int words = 0;
-    return 0;
+    int count = strlen(arr), words = 0;
+    for (int cursor = 0; cursor < count; cursor++)
+    {
+        while (isspace(arr[cursor]))
+        {
+            cursor++;
+        }
+        while (!isspace(arr[cursor]))
+        {
+            cursor++;
+        }
+        words++;
+    }
+    return words;
 }

@@ -6,7 +6,7 @@ void rearrange(char[]);
 int main()
 {
     char word[128];
-    printf("A word: ");
+    printf("Please enter the lowercase word: ");
     gets(word);
     rearrange(word);
     printf("Rearranged word: %s", word);
@@ -14,8 +14,8 @@ int main()
 
 int isVowel(char letter)
 {
-    char vowel_set[6] = "aeiou";
-    for (int j = 0; j < 6; j++)
+    char vowel_set[] = "aeiouAEIOU";
+    for (int j = 0; j < 11; j++)
     {
         if (letter == vowel_set[j])
         {
@@ -27,6 +27,13 @@ int isVowel(char letter)
 
 void rearrange(char word[])
 {
+    for (int i = 0; i < strlen(word); i++)
+    {
+        if (isupper(word[i]))
+        {
+            return;
+        }
+    }
     int startWithVowel = isVowel(word[0]);
     char vowels[128], consonant[128], CountVowels = 0, countConsonant = 0;
     for (int i = 0; i < strlen(word); i++)
@@ -37,27 +44,16 @@ void rearrange(char word[])
             vowels[CountVowels++] = letter;
             continue;
         }
-        consonant[countConsonant++] = word[i];
+        consonant[countConsonant++] = letter;
     }
+    vowels[CountVowels++] = '\0', consonant[countConsonant++] = '\0';
     if (startWithVowel)
     {
-        for (int j = 0; j < CountVowels; j++)
-        {
-            word[j] = vowels[j];
-        }
-        for (int i = 0, padding = CountVowels; i < countConsonant; i++)
-        {
-            word[i + padding] = consonant[i];
-        }
+        strcat(vowels, consonant);
+        strcpy(word, vowels);
         return;
     }
-    for (int j = 0; j < countConsonant; j++)
-    {
-        word[j] = consonant[j];
-    }
-    for (int i = 0, j = countConsonant; i < CountVowels; i++, j++)
-    {
-        word[j] = vowels[i];
-    }
+    strcat(consonant, vowels);
+    strcpy(word, consonant);
     return;
 }
