@@ -2,7 +2,7 @@
 
 int main()
 {
-    char first[10], middle[10], last[10];
+    char first[128], middle[128], last[128];
     printf("Please enter your first name : ");
     gets(first);
     printf("Please enter your last name : ");
