@@ -12,6 +12,7 @@
 			"xstring": "cpp",
 			"stdint.h": "c"
 		},
-		"explorer.autoReveal": false
+		"explorer.autoReveal": false,
+		"search.useIgnoreFiles": false
 	}
 }
