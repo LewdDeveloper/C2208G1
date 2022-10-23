@@ -8,9 +8,10 @@ int main()
     int i = 0, sum = 0;
     while (input[i] != '\0' && input[i] != '*')
     {
-        if (isdigit(input[i]))
+        // if (isdigit(input[i]))
+        if (input[i] >= '0' && input[i] <= '9')
         {
-            sum += input[i] - '0'; // we lookup ASCII table :)
+            sum += input[i] - '0';
         }
         i++;
     }

@@ -14,7 +14,7 @@ int main()
 
 int isVowel(char letter)
 {
-    char vowel_set[] = "aeiouAEIOU";
+    char vowel_set[] = "aeiou";
     for (int j = 0; j < 11; j++)
     {
         if (letter == vowel_set[j])

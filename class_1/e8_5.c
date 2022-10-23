@@ -2,6 +2,7 @@
 int isPalindrome(char[]);
 
 // https://en.wikipedia.org/wiki/Palindrome
+// https://en.cppreference.com/w/c/string/byte/isalnum
 
 int main()
 {
@@ -25,10 +26,12 @@ int isPalindrome(char str[])
     while (l < count)
     {
         int l_notAlphaNum, r_notAlphaNum;
+        // (str[l] >= '0' && str[l] <= '9') || (str[l] >= 'A' && str[l] <= 'Z') || (str[l] >= 'a' && str[l] <= 'z')
         l_notAlphaNum = !isalnum(str[l]);
         r_notAlphaNum = !isalnum(str[r]);
         if (!(l_notAlphaNum || r_notAlphaNum))
         {
+            // if (letter >= 'A' && letter <= 'Z') { return letter + 32; } return letter;
             if (tolower(str[l]) != tolower(str[r]))
             {
                 return 0;
