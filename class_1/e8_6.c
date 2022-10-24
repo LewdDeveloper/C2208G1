@@ -6,7 +6,7 @@ void rearrange(char[]);
 int main()
 {
     char word[128];
-    printf("Please enter the lowercase word: ");
+    printf("Please enter the A lowercase word: ");
     gets(word);
     rearrange(word);
     printf("Rearranged word: %s", word);
@@ -15,7 +15,7 @@ int main()
 int isVowel(char letter)
 {
     char vowel_set[] = "aeiou";
-    for (int j = 0; j < 11; j++)
+    for (int j = 0; j < strlen(vowel_set); j++)
     {
         if (letter == vowel_set[j])
         {

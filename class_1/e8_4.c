@@ -4,8 +4,8 @@ int countWords(char[]);
 
 int main()
 {
-    printf("Word count : %d\n", countWords("           Sunday, 17th               January 2019          "));
-    printf("Word count : %d\n", countWords("today                          is a     good day        "));
+    printf("Word count : %d\n", countWords("           Sunday, 17th               January 2019!            @"));
+    printf("Word count : %d\n", countWords("         today                          is a     good day!           "));
 }
 
 int countWords(char arr[])
