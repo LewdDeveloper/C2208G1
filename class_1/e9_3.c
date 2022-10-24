@@ -35,4 +35,17 @@ int main()
             printf("{english: %d, math: %d} %s\n", students[i].eng, students[i].maths, students[i].name);
         }
     }
+    printf("People with perfect english pts :\n");
+    for (int i = 0; i < 5; i++)
+    {
+        students[i].eng += 30;
+        if (students[i].eng > 100)
+        {
+            students[i].eng = 100;
+        }
+        if (students[i].eng == 100)
+        {
+            printf("%s, ", students[i].name);
+        }
+    }
 }

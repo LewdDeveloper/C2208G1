@@ -36,7 +36,7 @@ int main()
     // getCarInputs(car, 2);
     printCarAfter2000(car, 2);
     stats = getStatistics(car, 2);
-    printf("[Stats] {Minimum: %d, Maximum: %d, Avg: %d}\n", stats.MinPrice, stats.MaxPrice, stats.AvgPrice);
+    printf("[Stats] Minimum: %d, Maximum: %d, Avg: %d\n", stats.MinPrice, stats.MaxPrice, stats.AvgPrice);
 }
 
 void scanName(Car *car_ptr)
@@ -122,6 +122,8 @@ void printCarAfter2000(Car arr[], int count)
             printf("%d\n", arr[i].MaxSpeed);
         }
     }
+    // -> the magic 8 number is calculated from the spaces in 'Name' column
+    // https://en.cppreference.com/w/c/io/fprintf
     // Did you expect printf formats to ever be readable?
     // Tough luck
     // Sample run
