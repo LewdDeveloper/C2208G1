@@ -12,11 +12,11 @@
 
 #### 1. EPC - C : Logic Building and Elementary Programming
 
-- [X] 03-Oct-22
-- [X] 07-Oct-22
-- [X] 10-Oct-22
-- [X] 12-Oct-22
-- [X] 14-Oct-22
+- [x] 03-Oct-22
+- [x] 07-Oct-22
+- [x] 10-Oct-22
+- [x] 12-Oct-22
+- [x] 14-Oct-22
 
 `Program in C`
 

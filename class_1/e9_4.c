@@ -20,23 +20,25 @@ void scanMaxSpeed(Car *);
 void scanYear(Car *);
 void scanPrice(Car *);
 void getCarInputs(Car *, int);
+void printCarList(Car[], int);
 void printCarAfter2000(Car[], int);
 Stats getStatistics(Car[], int);
 
 int main()
 {
     Car car[] = {
-        {"BMW 1", 2004, 79400, 250},
-        {"Volvo S60", 2001, 109720, 250},
+        {"BMW 1", 2000, 79400, 250},
+        {"Volvo S60", 2002, 109720, 250},
         {"Peugeot 2008", 1999, 167550, 360},
         {"Peugeot 308", 2006, 10440, 250},
         {"Kia ur mom", 2000, 42000, -1}};
     Stats stats;
     // Car car[2];
     // getCarInputs(car, 2);
+    printCarList(car, 2);
     printCarAfter2000(car, 2);
     stats = getStatistics(car, 2);
-    printf("[Stats] Minimum: %d, Maximum: %d, Avg: %d\n", stats.MinPrice, stats.MaxPrice, stats.AvgPrice);
+    printf("Stats : Cheapest car costs : $%d, Most expensive car costs : $%d, Average cost of cars : $%d\n", stats.MinPrice, stats.MaxPrice, stats.AvgPrice);
 }
 
 void scanName(Car *car_ptr)
@@ -91,8 +93,43 @@ void getCarInputs(Car *arr, int count)
     return;
 }
 
+void printCarList(Car arr[], int count)
+{
+    int max_str_length = 0;
+    for (int i = 0; i < count; i++)
+    {
+        int len = strlen(arr[i].Name);
+        if (len > max_str_length)
+        {
+            max_str_length = len;
+        }
+    }
+    printf("%-7s|", "No#");                         // prints "No#" (3 characters) then right-padding with ' ' until there's 7 characters.
+    printf("%-8s%*s|", "Name", max_str_length, ""); // prints "Name" (4 characters) then right-padding with ' ' until there's 8 characters. prints ANY ' ' characters
+    printf("%-8s|", "Year");                        // prints "Year" (4 characters) then right-padding with ' ' until there's 8 characters.
+    printf("%-9s|", "Price");                       // prints "Price" (5 characters) then right-padding with ' ' until there's 9 characters.
+    printf("Max Speed\n");                          // prints "Max speed" with a newline character.
+    for (int i = 0, counter = 0; i < count; i++)
+    {
+        printf("%-7d|", ++counter, "");                                              // prints ANY number then right-padding with ' ' until there's 7 characters. If the digits are more or equal to 7 there won't be any right-padding characters inserted
+        printf("%s%*s|", arr[i].Name, max_str_length + 8 - strlen(arr[i].Name), ""); // prints car name. prints ANY ' ' characters ( formula is : the differences of longest car name with current car name then add by 8 )
+        printf("%-8d|", arr[i].Year, "");
+        printf("$%-8d|", arr[i].Price, "");                                          // prints dollar sign character. prints ANY number  then right-padding with ' ' until there's 8 characters
+        printf("%d\n", arr[i].MaxSpeed);
+    }
+    // https://en.cppreference.com/w/c/io/fprintf
+    // Did you expect printf formats to ever be readable?
+    // Tough luck
+    // The following string formats was referenced from Sample run
+    // No#    |Name        |Year    |Price    |MaxSpeed
+    // 1      |Toyota      |2000    |47000    |125
+    // 2      |Ford        |1995    |34000    |150
+    // ----------------------------------------
+}
+
 void printCarAfter2000(Car arr[], int count)
 {
+    printf("List of car after year 2000:\n");
     int max_str_length = 0;
     for (int i = 0; i < count; i++)
     {
@@ -118,19 +155,10 @@ void printCarAfter2000(Car arr[], int count)
             printf("%-7d|", ++counter, "");
             printf("%s%*s|", arr[i].Name, max_str_length + 8 - strlen(arr[i].Name), "");
             printf("%-8d|", arr[i].Year, "");
-            printf("%-9d|", arr[i].Price, "");
+            printf("$%-8d|", arr[i].Price, "");
             printf("%d\n", arr[i].MaxSpeed);
         }
     }
-    // -> the magic 8 number is calculated from the spaces in 'Name' column
-    // https://en.cppreference.com/w/c/io/fprintf
-    // Did you expect printf formats to ever be readable?
-    // Tough luck
-    // Sample run
-    // No#    |Name        |Year    |Price    |MaxSpeed
-    // 1      |Toyota      |2000    |47000    |125
-    // 2      |Ford        |1995    |34000    |150
-    // ----------------------------------------
     return;
 }
 
