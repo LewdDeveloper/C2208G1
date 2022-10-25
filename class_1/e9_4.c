@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+// https://en.cppreference.com/w/c/io/fprintf
+// https://en.cppreference.com/w/c/io/fscanf
+
 typedef struct
 {
     char Name[128]; // car name
@@ -26,15 +29,15 @@ Stats getStatistics(Car[], int);
 
 int main()
 {
-    Car car[] = {
-        {"BMW 1", 2000, 79400, 250},
-        {"Volvo S60", 2002, 109720, 250},
-        {"Peugeot 2008", 1999, 167550, 360},
-        {"Peugeot 308", 2006, 10440, 250},
-        {"Kia ur mom", 2000, 42000, -1}};
+    // Car car[] = {
+    //     {"BMW 1", 2000, 79400, 250},
+    //     {"Volvo S60", 2002, 109720, 250},
+    //     {"Peugeot 2008", 1999, 167550, 360},
+    //     {"Peugeot 308", 2006, 10440, 250},
+    //     {"Kia ur mom", 2000, 42000, -1}};
     Stats stats;
-    // Car car[2];
-    // getCarInputs(car, 2);
+    Car car[2];
+    getCarInputs(car, 2);
     printCarList(car, 2);
     printCarAfter2000(car, 2);
     stats = getStatistics(car, 2);
@@ -44,15 +47,20 @@ int main()
 void scanName(Car *car_ptr)
 {
     printf("Name: ");
-    scanf("%s", car_ptr->Name);
+    scanf("%127[^\n]%*c", &car_ptr->Name); // reads up to 127 characters then discard space
     return;
 }
 
 void scanYear(Car *car_ptr)
 {
-    int year;
+    int year, invalid = 0;
     do
     {
+        if (invalid)
+        {
+            printf("Year must be from 1980 to 2019\n");
+        }
+        invalid = 1;
         printf("Year: ");
         scanf("%d", &year);
     } while (!(year >= 1980 && year <= 2019));
@@ -62,9 +70,14 @@ void scanYear(Car *car_ptr)
 
 void scanPrice(Car *car_ptr)
 {
-    int price;
+    int price, invalid = 0;
     do
     {
+        if (invalid)
+        {
+            printf("Price must be from $30,000 to $400,000\n");
+        }
+        invalid = 1;
         printf("Price: ");
         scanf("%d", &price);
     } while (!(price >= 30000 && price <= 400000));
@@ -75,7 +88,7 @@ void scanPrice(Car *car_ptr)
 void scanMaxSpeed(Car *car_ptr)
 {
     printf("Max Speed: ");
-    scanf("%d", &car_ptr->MaxSpeed);
+    scanf("%d%*c", &car_ptr->MaxSpeed); // reads a number then discard space
     return;
 }
 
@@ -114,10 +127,9 @@ void printCarList(Car arr[], int count)
         printf("%-7d|", ++counter, "");                                              // prints ANY number then right-padding with ' ' until there's 7 characters. If the digits are more or equal to 7 there won't be any right-padding characters inserted
         printf("%s%*s|", arr[i].Name, max_str_length + 8 - strlen(arr[i].Name), ""); // prints car name. prints ANY ' ' characters ( formula is : the differences of longest car name with current car name then add by 8 )
         printf("%-8d|", arr[i].Year, "");
-        printf("$%-8d|", arr[i].Price, "");                                          // prints dollar sign character. prints ANY number  then right-padding with ' ' until there's 8 characters
+        printf("$%-8d|", arr[i].Price, ""); // prints dollar sign character. prints ANY number then right-padding with ' ' until there's 8 characters
         printf("%d\n", arr[i].MaxSpeed);
     }
-    // https://en.cppreference.com/w/c/io/fprintf
     // Did you expect printf formats to ever be readable?
     // Tough luck
     // The following string formats was referenced from Sample run
