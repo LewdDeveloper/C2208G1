@@ -47,7 +47,7 @@ int main()
 void scanName(Car *car_ptr)
 {
     printf("Name: ");
-    gets(&car_ptr->Name);
+    scanf("%127[^\n]%*c", &car_ptr->Name); // reads up to 127 characters then discard space
     return;
 }
 
