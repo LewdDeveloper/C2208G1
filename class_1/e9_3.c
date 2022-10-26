@@ -35,6 +35,7 @@ int main()
             printf("{english: %d, math: %d} %s\n", students[i].eng, students[i].maths, students[i].name);
         }
     }
+    printf("English grade of each student is increased by 30\n");
     printf("People with perfect english pts :\n");
     for (int i = 0; i < 5; i++)
     {
