@@ -10,7 +10,8 @@
 			"stdlib.h": "c",
 			"vector": "cpp",
 			"xstring": "cpp",
-			"stdint.h": "c"
+			"stdint.h": "c",
+			"string.h": "c"
 		},
 		"explorer.autoReveal": false,
 		"search.useIgnoreFiles": false
