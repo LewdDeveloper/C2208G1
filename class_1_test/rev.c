@@ -130,20 +130,21 @@ int main()
     }
     puts("");
 
-    // double t;
-    // int n_copy = n;
-    // for (i = 0; i <= n_copy; i++, n--, m--)
-    // {
-    //     if (i % 2 == 0 || i == 0)
-    //     {
-    //         t +=  (n - m - i) * .1;
-    //     }
-    //     else
-    //     {
-    //         t -= (n - m - i) * .1;
-    //     }
-    // }
-    // printf("T = %Lf ", t);
+    double t = 0;
+    int count = n - m;
+    for (i = max; i >= 1; --i)
+    {
+        t += 1 / i;
+        // if (i % 2 == 0 || i == 0)
+        // {
+        //     t +=  (n - m - i) * .1;
+        // }
+        // else
+        // {
+        //     t -= (n - m - i) * .1;
+        // }
+    }
+    printf("T = %Lf ", t);
 
     printf("Test fun1\n");
     printf("\nfun1(-1): ");
