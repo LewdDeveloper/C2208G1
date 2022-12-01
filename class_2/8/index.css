@@ -1,0 +1,89 @@
+.background {
+  background-color: antiquewhite;
+}
+
+.emi-title {
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+
+.car {
+  height: 256px;
+  margin-top: -96px;
+}
+
+.header {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: blue;
+}
+
+.navbar ul {
+  margin-left: 0%;
+  padding: 0%;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid black;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.navbar ul li {
+  list-style-type: none;
+  float: left;
+}
+
+.navbar ul li a {
+  border-right: 1px solid black;
+  padding: 8px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: darkred;
+  font-weight: bold;
+}
+
+.navbar li :hover {
+  background-color: purple;
+  color: antiquewhite;
+}
+
+.emi-input-form table,
+th,
+td {
+  background-color: #ffffcc;
+  border: 1px solid darkgreen;
+}
+
+.emi-input-form table {
+  border-spacing: 0px;
+}
+
+.emi-input-form th,
+td {
+  padding: 2px;
+  border-top-width: 0;
+  border-left-width: 0;
+}
+
+.emi-input-form th:last-child,
+td:last-child {
+  border-right-width: 0;
+}
+
+.emi-input-form tr:last-child td {
+  border-bottom-width: 0;
+}
+
+.custom-limit-space {
+  width: 114px;
+}
+
+#emi-emi:read-only {
+    color: red;
+}
+
+.emi-calculator-submit {
+  border: 0px;
+  text-align: right;
+}

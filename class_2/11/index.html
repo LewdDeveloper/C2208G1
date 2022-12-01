@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <table>
+        <tr>
+          <td>
+            <input type="text" name="name" placeholder="Enter name" required />
+          </td>
+          <td>
+            <input
+              type="date"
+              name="assigned"
+              title="enter date of assigned lesson"
+            />
+          </td>
+          <td>
+            <input
+              type="radio"
+              name="status"
+              id="done"
+              value="turned in"
+              title="Completed assignment?"
+            />
+            <label for="done">Turned in</label>
+            <input
+              type="radio"
+              name="status"
+              id="late"
+              value="late"
+              title="Late due for assignment"
+            />
+            <label for="beforedue">Not turned in</label>
+            <input
+              type="radio"
+              name="status"
+              id="beforedue"
+              value="before due"
+              title="There's still time left to complete assingment"
+            />
+            <label for="late">Late</label>
+          </td>
+          <td>
+            <button type="submit" title="">Add</button>
+          </td>
+          <td>
+            <button type="button" title="" onclick="toLocalStorage()">To localstorage</button>
+            <button type="button" title="" onclick="fromLocalStorage()">From localstorage</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <br>
+    <span>Total:
+        <span id="count">0 element</span>
+    </span>
+    <table>
+      <tr>
+        <th>No.</th>
+        <th>Name</th>
+        <th>Assigned</th>
+        <th>Status</th>
+        <th colspan="2">Action</th>
+      </tr>
+    </table>
+  </body>
+</html>

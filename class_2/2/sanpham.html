@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aptech</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .image {
+        width: 400px;
+        transition: width 5s;
+      }
+
+      .image:hover {
+        width: 600px;
+      }
+
+      .menu_image {
+        height: 16px;
+        width: 16px;
+        margin-right: 4px;
+      }
+
+      #transition-element {
+        background-color: #e4f0f5;
+        color: #000;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        font: 1em monospace;
+        width: 100%;
+        transition: all 1s ease-out;
+        width: 200px;
+      }
+
+      #transition-element:hover {
+        width: 300px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img
+      class="image"
+      src="media/grapefruit-slice-332-332.jpg"
+      style="float: left; margin: top 20px; width: 64px; height: 64px"
+    />
+    <div
+      style="
+        background-color: yellow;
+        height: 100px;
+        text-align: center;
+        margin: 10px 2px;
+      "
+    >
+      <h1>Công ty cổ phần Aptech</h1>
+    </div>
+    <div>
+      <ul>
+        <li>
+          <a href="index.html"
+            ><img
+              src="media/rectangle-xxl.png"
+              alt="menu_trang_chủ"
+              class="menu_image"
+            />Trang chủ</a
+          >
+        </li>
+        <li><a href="tintuc.html">Tin tức</a></li>
+        <li><a href="sanpham.html">Sản phẩm</a></li>
+        <li><a href="lienhe.html">Liên hệ</a></li>
+      </ul>
+    </div>
+    <h1>Sản phẩm</h1>
+    <img
+      class="image"
+      src="media/grapefruit-slice-332-332.jpg"
+      alt="Grapefruit slice atop a pile of other slices"
+    />
+    <h2>Use map</h2>
+    <img src="media/workplace.jpg" alt="Workplace" usemap="#workmap" />
+    <map name="workmap">
+      <area
+        shape="rect"
+        coords="34,44,270,350"
+        alt="Computer"
+        href="https://www.thegioididong.com/laptop"
+      />
+      <area
+        shape="rect"
+        coords="290,172,333,250"
+        alt="Phone"
+        href="phone.htm"
+      />
+      <area
+        shape="circle"
+        coords="337,300,44"
+        alt="Coffee"
+        href="https://trungnguyencoffeevn.com"
+      />
+    </map>
+    <h2>Transition</h2>
+    <div id="transition-element" width="20px">
+      Hover to see<br />the transition.
+    </div>
+  </body>
+</html>

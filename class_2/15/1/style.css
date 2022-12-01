@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+p {
+  margin: 0;
+}
+body {
+  font-family: Verdana;
+  background-color: #ffffcc;
+  padding-top: 4px;
+  margin: auto;
+  max-width: 900px;
+  max-height: 1000px;
+}
+header {
+  text-align: center;
+  background-color: #ccaa66;
+  color: #330000;
+  /* padding: 30px; */
+  border: double black;
+}
+header div {
+  border-top: 2px solid black;
+}
+section {
+  background-color: #e8d882;
+  border: double black;
+  border-top: 0px;
+}
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  padding: 20px;
+  width: 20%;
+  background-color: inherit;
+}
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+nav li {
+  font-size: large;
+  margin: 14px 0;
+}
+nav a {
+  text-decoration: none;
+}
+article {
+  float: left;
+  padding: 20px;
+  width: 80%;
+  background-color: #f1e8b0;
+  color: #330000;
+}
+article img {
+  float: right;
+  clear: both;
+  margin-left: 1em;
+  margin-right: 4px;
+  max-width: 100%;
+}
+/* Clear floats after the columns */
+section::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+/* Style the footer */
+footer {
+  padding: 14px;
+  font-style: italic;
+  text-align: center;
+  background-color: #ccaa66;
+  color: #330000;
+  border: double black;
+  border-top: 0px;
+}

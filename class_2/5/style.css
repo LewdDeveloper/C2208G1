@@ -1,0 +1,66 @@
+h2 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: green;
+}
+
+p {
+  text-indent: 20px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 2px;
+  overflow: hidden;
+  background-color: lightblue;
+}
+
+li {
+  float: left;
+}
+
+a {
+  text-decoration: none;
+}
+
+li a {
+  border-right: 1px solid red;
+  line-height: 5px;
+  margin: 10px;
+  display: block;
+  padding: 20px;
+}
+
+li a:hover {
+  background-color: blue;
+  color: red;
+}
+
+button {
+  size: 5px 5px;
+}
+
+.lCard {
+  background-color: yellow;
+  height: 100px;
+  text-align: center;
+  overflow: hidden;
+}
+
+#ls {
+  font-style: italic;
+}
+
+.chumautim {
+  padding-right: 20px;
+  padding-left: 40px;
+  padding-bottom: 30px;
+  padding-top: 10px;
+  border-bottom: 10px;
+  border-right: 5px;
+  border-style: none double solid none;
+  border-bottom-color: red;
+  border-right-color: black;
+  border-color: violet;
+}

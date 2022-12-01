@@ -1,0 +1,7 @@
+.config-box {
+  margin: 4px;
+}
+
+.config-box tr td {
+  padding-right: 16px;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js"></script>
+    <title>Document</title>
+  </head>
+  <body class="background">
+    <div class="header">
+      <h1>Online EMI Calculator for Cars</h1>
+      <img class="car" src="media/car.png" alt="car for reference" />
+    </div>
+    <div class="navbar">
+      <ul>
+        <li><a href="">New Car</a></li>
+        <li><a href="">Used Cars Us</a></li>
+        <li><a href="">Sell Cars</a></li>
+        <li><a href="">Accessories</a></li>
+      </ul>
+    </div>
+    <p class="emi-title">
+      <b>EMI Calculator for Cars</b>
+    </p>
+    <div class="emi-input-form">
+      <table id="emi-input-form">
+        <tr>
+          <td class="custom-limit-space">Principal ($):</td>
+          <td>
+            <input
+              type="number"
+              id="emi-principal"
+              title="emi principal in dollar currency"
+              step="0.01"
+              value="10000"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Period (In Months):</td>
+          <td>
+            <input
+              type="number"
+              id="emi-period"
+              title="emi period in month"
+              value="10"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Rate of interest (%):</td>
+          <td>
+            <input
+              type="number"
+              id="emi-rate"
+              title="emi rate of interest"
+              step="0.01"
+              value="10"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Monthly Installment ($):</td>
+          <td>
+            <input
+              class="highlighted_number"
+              type="number"
+              id="emi-emi"
+              title="emi monthly installment"
+              step="0.01"
+              readonly="true"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="emi-calculator-submit" colspan="2">
+            <button id="emi-calculate" type="button" onclick="emi_calculate()">
+              Calculate
+            </button>
+            <button id="emi-reset" type="button" onclick="emi_clear_input()">
+              Reset
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

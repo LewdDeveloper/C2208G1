@@ -70,11 +70,11 @@ int main()
     }
     puts("");
 
-    printf("Enter m: ");
     while (!found_m)
     {
         char cur;
         int pow10 = 1, temp = 0, invalid = 0;
+        printf("Enter m: ");
         gets(&get_m);
         // get_m[0] = asciidigit, get_m[1] == asciidigit, get_m[2] = "\0"
         for (i = strlen(get_m) - 1; i >= 0; i--)
@@ -84,9 +84,9 @@ int main()
             {
                 invalid = 1;
                 if (i == 0)
-                    printf("Incorrect input!");
+                    printf("Incorrect input!\n");
                 else
-                    printf("Trailing character!");
+                    printf("Trailing character!\n");
                 break;
             }
             temp += (cur - '0') * pow10;
@@ -105,7 +105,7 @@ int main()
         }
         else
         {
-            printf("Out of range!");
+            printf("Out of range!\n");
         }
     }
 
@@ -130,21 +130,22 @@ int main()
     }
     puts("");
 
-    double t = 0;
-    int count = n - m;
-    for (i = max; i >= 1; --i)
-    {
-        t += 1 / i;
-        // if (i % 2 == 0 || i == 0)
-        // {
-        //     t +=  (n - m - i) * .1;
-        // }
-        // else
-        // {
-        //     t -= (n - m - i) * .1;
-        // }
-    }
-    printf("T = %Lf ", t);
+    // ? ? ?
+    // double t = 0;
+    // int count = n - m;
+    // for (i = count; i >= 1; --i)
+    // {
+    //     t += 1 / i;
+    //     if (i % 2 == 0 || i == 0)
+    //     {
+    //         t +=  (n - m - i) * .1;
+    //     }
+    //     else
+    //     {
+    //         t -= (n - m - i) * .1;
+    //     }
+    // }
+    // printf("T = %Lf\n", t);
 
     printf("Test fun1\n");
     printf("\nfun1(-1): ");

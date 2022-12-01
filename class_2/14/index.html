@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <script>
+      function replacer(k, v) {
+        return k, v
+      }
+      function addNote(value, done) {
+        let parent = document.getElementById('notes')
+        let note = parent.appendChild(document.createElement('input'))
+        note.type = 'checkbox'
+        note.id = `status-${value}`
+        note.checked = done
+        let label = parent.appendChild(document.createElement('label'))
+        label.htmlFor = `status-${value}`
+        label.innerText = value
+        let del = parent.appendChild(document.createElement('a'))
+        del.href = '#'
+        del.innerText = 'Delete'
+        del.addEventListener('click', function (e) {
+          e.preventDefault()
+          deleteItemLocalStorage(value)
+          parent.removeChild(note)
+          parent.removeChild(label)
+          parent.removeChild(del)
+        })
+        note.checked
+          ? (label.style.textDecoration = 'line-through')
+          : (label.style.textDecoration = 'none')
+        note.addEventListener('change', (event) => {
+          deleteItemLocalStorage(value)
+          newItemLocalStorage({
+            name: value,
+            finished: event.currentTarget.checked,
+          })
+          if (event.currentTarget.checked) {
+            label.style.textDecoration = 'line-through'
+          } else {
+            label.style.textDecoration = 'none'
+          }
+        })
+        parent.appendChild(document.createElement('br'))
+      }
+
+      function getLocalStorage() {
+        return JSON.parse(localStorage.getItem('notes')) || []
+      }
+      function deleteItemLocalStorage(name) {
+        let notes = getLocalStorage()
+        for (let i = 0; i < notes.length; i++) {
+          if (notes[i].name === name) {
+            notes.splice(i, 1)
+            break
+          }
+        }
+        localStorage.setItem('notes', JSON.stringify(notes, replacer))
+      }
+      function newItemLocalStorage(obj) {
+        let notes = getLocalStorage()
+        notes.push(obj)
+        localStorage.setItem('notes', JSON.stringify(notes, replacer))
+      }
+      function newItem() {
+        let input = document.getElementById('name')
+        let value = input.value
+        addNote(value, false)
+        newItemLocalStorage({
+          name: value,
+          finished: false,
+        })
+        input.value = ''
+        return value
+      }
+      function loadNote() {
+        let notes = getLocalStorage()
+        notes.forEach((note, i) => {
+          if (!note.finished) {
+            addNote(note.name, note.finished)
+          } else {
+            notes.splice(i, 1)
+          }
+        })
+        localStorage.setItem('notes', JSON.stringify(notes, replacer))
+      }
+    </script>
+  </head>
+  <body onload="loadNote()">
+    <input type="text" name="name" id="name" placeholder="new note" />
+    <button onclick="newItem()">Add</button>
+    <div id="notes" />
+  </body>
+</html>

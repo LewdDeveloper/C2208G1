@@ -1,0 +1,38 @@
+span {
+    font-weight: bold;
+}
+
+span #count {
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+}
+
+table {
+  border-spacing: 0;
+}
+
+tbody {
+  white-space: nowrap;
+}
+
+th,
+td {
+  padding: 5px 10px;
+  border-top-width: 0;
+  border-left-width: 0;
+}
+
+th:last-child,
+td:last-child {
+  border-right-width: 0;
+}
+
+tr:last-child td {
+  border-bottom-width: 0;
+}

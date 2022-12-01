@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        var canvas = document.getElementById('mCanvas')
+        var ctext = canvas.getContext('2d')
+        ctext.beginPath()
+        ctext.rect(18, 50, 200, 100)
+        ctext.fillStyle = 'DarkBlue'
+        ctext.fill()
+        ctext.font = "italic 30pt Calibri"
+        ctext.fillStyle = 'White'
+        ctext.fillText("Welcome to HTML5 Canvas", 40, 100)
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="mCanvas" width="400" height="300"></canvas>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="mysite.css" />
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="nextpage.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="panel panel-management">
+      <h2>Student management</h2>
+      <form id="student-creator">
+        <table>
+          <tr>
+            <td>Student Name:</td>
+            <td>
+              <input
+                type="text"
+                name="name"
+                id="student-name"
+                placeholder="Input student name"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Student DOB:</td>
+            <td>
+              <input
+                type="date"
+                name="dob"
+                id="student-dob"
+                title="Input student date of birth"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Student Gender:</td>
+            <td>
+              <input
+                type="radio"
+                name="gender"
+                id="male"
+                value="Male"
+                title="Male"
+              />
+              <label for="male">Male</label>
+              <input
+                type="radio"
+                name="gender"
+                id="female"
+                value="Female"
+                title="Female"
+              />
+              <label for="female">Female</label>
+            </td>
+          </tr>
+          <tr>
+            <td>Student Languageuage:</td>
+            <td>
+              <input
+                type="checkbox"
+                name="English"
+                title="this student can communicate in English"
+              />
+              <label for="english">English</label>
+              <input
+                type="checkbox"
+                name="Vietnamese"
+                title="this student can communicate in Vietnamese"
+              />
+              <label for="vietnamese">Vietnamese</label>
+              <input
+                type="checkbox"
+                name="Japanese"
+                title="this student can communicate in Japanese"
+              />
+              <label for="japanese">Japanese</label>
+              <input
+                type="checkbox"
+                name="Chinese"
+                title="this student can communicate in Chinese"
+              />
+              <label for="chinese">Chinese</label>
+              <input
+                type="checkbox"
+                name="French"
+                title="this student can communicate in French"
+              />
+              <label for="french">French</label>
+            </td>
+          </tr>
+          <tr>
+            <td>Student Class:</td>
+            <td>
+              <select
+                name="class"
+                id="student-class"
+                title="student's current attending class"
+              >
+                <option>C2208G1</option>
+              </select>
+              <a onclick="add_student_class()">Add Class</a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <button type="submit">Add</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <h2>Student List</h2>
+      <table id="student-list">
+        <tr>
+          <td>Name</td>
+          <td>Class</td>
+          <td>DOB</td>
+          <td>Gender</td>
+          <td>Language</td>
+          <td></td>
+        </tr>
+      </table>
+      <p>
+        <span class="total-students">Total:</span>
+        <span class="total-students-count">0 student</span>
+      </p>
+    </div>
+  </body>
+</html>

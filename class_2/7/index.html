@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="excersise">
+      <label for="number">Enter your numbers:</label><br />
+      <input type="number" id="a" name="number" placeholder="-" />
+      <input type="number" id="b" name="number" placeholder="-" /><br />
+      <label for="number" id="display_result"></label><br />
+      <button type="button" onclick="on_calculate()">Calculate</button>
+      <button type="button" onclick="on_factorial()">Find factorial</button>
+      <button type="button" onclick="on_multiplication_table()">
+        Find multiplication table
+      </button>
+    </div>
+
+    <div id="homework">
+      <label for="textarea">Enter student list:</label><br />
+      <form>
+        <textarea id="student_list_textarea" title="add student line by line">Nguyen Van A 2002&#10;Nguyen Van E 2001</textarea
+        >
+      </form>
+      <button type="button" onclick="on_display_student()">
+        Create students table & sort alphabetically
+      </button>
+    </div>
+  </body>
+</html>
