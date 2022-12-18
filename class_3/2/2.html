@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TempuratureMonitor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // alternatively create a form and compare it's $valid property 
+      let app = angular.module('TempuratureMonitor', []);
+      app.run(function ($rootScope) {
+        let total = 0;
+        let length = 0;
+        $rootScope.Median = 0;
+        $rootScope.displayTempuratureList = '';
+        $rootScope.addTempurature = function () {
+          if (!$rootScope.Tempurature) {
+            return;
+          }
+          $rootScope.displayTempuratureList += $rootScope.Tempurature + ' '; // type coercion to string
+          total += $rootScope.Tempurature;
+          length += 1;
+          $rootScope.Tempurature = '';
+        };
+        $rootScope.getMedian = function () {
+          if (length > 0) $rootScope.Median = total / length;
+        };
+      });
+    </script>
+    <h1>Tempurature Monitor</h1>
+    <b>Add tempurature:</b>
+    <input type="number" ng-model="Tempurature" ng-required="number" />
+    <button ng-on-click="addTempurature()">Add</button>
+    <br />
+    <span>Current state of the list: {{displayTempuratureList}}</span>
+    <hr />
+    <button ng-on-click="getMedian()">Get Median Tempurature</button>
+    <br />
+    <span>Current Median: {{Median}}</span>
+  </body>
+</html>

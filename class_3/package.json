@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@types/angularjs": "^1.5.14-alpha"
+  }
+}

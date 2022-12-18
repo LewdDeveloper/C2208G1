@@ -1,0 +1,28 @@
+<!-- The ng-bind-html directive is a secure way of binding content to an HTML
+element. When you are letting AngularJS write HTML in your application, you
+should check the HTML for dangerous code. -->
+
+<!-- By including the "angular-sanitize.js"
+module in your application you can do so by running the HTML code through the
+ngSanitize function. -->
+
+<!-- https://docs.angularjs.org/api/ng/directive/ngBindHtml -->
+
+<!DOCTYPE html>
+<html>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-sanitize.js"></script>
+  <body ng-app="myApp">
+    <div ng-controller="myCtrl">
+      <input type="text" ng-model="myText" />
+      <p ng-bind-html="myText"></p>
+    </div>
+
+    <script>
+      var app = angular.module('myApp', ['ngSanitize']);
+      app.controller('myCtrl', function ($scope) {
+        $scope.myText = `<h1>Type Something<h1>`;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!-- https://docs.angularjs.org/guide/directive -->
+<!-- Controller directive will inhert rootScope directive if not exist  -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+      angular
+        .module('myapp', [])
+        .controller('MyController', function ($scope) {})
+        .directive('myFormregister', function () {
+          var html = `<table>
+                            <tr>
+                                <td>Username</td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Password</td>
+                                <td><input type="password"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input type="Button" value="Login"></td>
+                            </tr>
+                        </table>`;
+          return {
+            template: html,
+          };
+        });
+    </script>
+    <title>Document</title>
+  </head>
+  <body ng-app="myapp">
+    <div ng-controller="MyController">
+        <div my-formregister></div>
+    </div>
+  </body>
+</html>

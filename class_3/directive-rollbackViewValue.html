@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Example - example-ngModelOptions-directive-blur-production</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-app="optionsExample">
+    <div ng-controller="ExampleController">
+      <form name="userForm">
+        <label>
+          Name:
+          <input
+            type="text"
+            name="userName"
+            ng-model="user.name"
+            ng-model-options="{ updateOn: 'blur' }"
+            ng-keyup="cancel($event)"
+          /> </label
+        ><br />
+        <label>
+          Other data:
+          <input type="text" ng-model="user.data" /> </label
+        ><br />
+      </form>
+      <pre>user.name = <span ng-bind="user.name"></span></pre>
+    </div>
+    <script>
+      angular.module('optionsExample', []).controller('ExampleController', [
+        '$scope',
+        function ($scope) {
+          $scope.user = { name: 'say', data: '' };
+
+          $scope.cancel = function (e) {
+            if (e.keyCode === 27) {
+              $scope.userForm.userName.$rollbackViewValue();
+            }
+          };
+        },
+      ]);
+    </script>
+  </body>
+</html>
+
+<!-- 
+Copyright 2022 Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

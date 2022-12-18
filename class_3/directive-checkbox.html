@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ví dụ sử dụng Directive ng-Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+      .ng-invalid {
+        color: red;
+      }
+    </style>
+    <script>
+      angular.module('myapp', []).controller('ExampleController', [
+        '$scope',
+        function ($scope) {
+          $scope.game = 'KHÔNG';
+          $scope.tour = 'KHÔNG';
+        },
+      ]);
+    </script>
+  </head>
+  <body ng-app="myapp">
+    <h1>Sở thích bạn là gì?</h1>
+    <form name="myForm" ng-controller="ExampleController">
+      Chơi Game:
+      <input
+        type="checkbox"
+        ng-model="game"
+        ng-true-value="'CÓ'"
+        ng-false-value="'KHÔNG'"
+      />
+      <br />
+      Du Lịch:
+      <input
+        type="checkbox"
+        ng-model="tour"
+        ng-true-value="'CÓ'"
+        ng-false-value="'KHÔNG'"
+      />
+      <br />
+      <h4>Bạn đang chọn</h4>
+      <tt>Chơi Game = {{game}}</tt><br />
+      <tt>Du Lịch = {{tour}}</tt><br />
+    </form>
+  </body>
+</html>

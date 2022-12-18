@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="3.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div ng-app="myApp">
+      <div ng-controller="myCtrl">
+        <h1 class="text-center">Welcome to the GA Camping Store</h1>
+        <div class="text-center">
+          <label for="filter">Filtering input: </label>
+          <input type="text" name="filter" ng-model="filter" />
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-auto">
+            <table class="table table-hover">
+              <thead>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Total</th>
+                <th>&nbsp;</th>
+              </thead>
+              <tr ng-repeat="item in store | filter: filter">
+                <td>{{item.Category}}</td>
+                <td>{{item.Description}}</td>
+                <td>${{item.Price.toFixed(2)}}</td>
+                <td>
+                  <input type="number" name="Qty" ng-model="item.Qty" min="1"/>
+                </td>
+                <td>${{ (item.Price * item.Qty).toFixed(2) }}</td>
+                <td>
+                  <button class="btn btn-primary" ng-click="addToCart(item)">
+                    Add to Cart
+                  </button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="my-5">
+          <h2>Your Cart:</h2>
+          <ul>
+            <li ng-repeat="item in cart | orderBy:'Category'">
+              <span
+                >{{ item.Qty + ' * ' + item.Description + ' = ' +
+                (getPrice(item)) }}</span
+              >
+              <button
+                class="btn btn-danger btn-small"
+                ng-click="removeItem(item)"
+              >
+                Remove
+              </button>
+            </li>
+          </ul>
+          <h3>Total: {{total.toFixed(2) | currency}}</h3>
+          <button class="btn btn-danger" ng-click="clearCart()">
+            Clear Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!-- The ngBindTemplate directive specifies that the element text content should be replaced 
+with the interpolation of the template in the ngBindTemplate attribute. 
+Unlike ngBind, the ngBindTemplate can contain multiple {{ }} expressions. 
+This directive is needed since some HTML elements (such as TITLE and OPTION) cannot contain SPAN elements. -->
+
+<!-- The ng-bind-template directive tells AngularJS to replace the text content of an HTML element with the value of the given expressions.
+Use the ng-bind-template directive when you want to bind more than one expression to your HTML element. -->
+
+<!-- https://docs.angularjs.org/api/ng/directive/ngBindTemplate -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ví dụ sử dụng Directive</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      body {
+        padding: 20px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+      angular
+        .module('myapp', [])
+        .controller('ExampleController', ['$scope', function ($scope) {
+          $scope.name = 'AngularJS';
+          $scope.website = 'angularjs.org';
+        }]);
+    </script>
+  </head>
+  <body ng-app="myapp">
+    <div ng-controller="ExampleController">
+      Name <input type="text" ng-model="name" /><br />
+      Website: <input type="text" ng-model="website" /><br />
+      <strong ng-bind-template="{{name}} {{website}}!"></strong>
+      <strong>{{name}} {{website}}!</strong>
+    </div>
+  </body>
+</html>

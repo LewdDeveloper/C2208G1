@@ -1,0 +1,41 @@
+<!-- Since the role of forms in client-side AngularJS applications is different than in classical roundtrip apps, it is desirable for the browser not to translate the form submission into a full page reload that sends the data to the server. Instead some javascript logic should be triggered to handle the form submission in an application-specific way.
+
+For this reason, AngularJS prevents the default action (form submission to the server) unless the <form> element has an action attribute specified.-->
+  
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ví dụ sử dụng Directive ng-Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+      angular.module('myapp', []).controller('ExampleController', [
+        '$scope',
+        function ($scope) {
+          // Khởi tạo giá trị ban đầu cho list = [];
+          $scope.list = [];
+
+          // Khi submit form thì chạy hàm này
+          $scope.submit = function () {
+            // nếu người dùng có nhập nội dung thì lưu nó vào list
+            if ($scope.text) {
+              $scope.list.push(this.text);
+
+              // đồng thời xóa dữ liệu trong thẻ input
+              $scope.text = '';
+            }
+          };
+        },
+      ]);
+    </script>
+  </head>
+  <body ng-app="myapp">
+    <form ng-submit="submit()" ng-controller="ExampleController">
+      Nhập tên sinh viên
+      <input type="text" ng-model="text" name="text" />
+      <input type="submit" id="submit" value="Thêm" /> <br />
+      Danh sách sinh viên:
+      <pre>list={{list}}</pre>
+    </form>
+  </body>
+</html>
