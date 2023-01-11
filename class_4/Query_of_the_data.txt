@@ -1,0 +1,52 @@
+		SELECT: 
+	truy vấn dl từ các bảng
+	SELECT cột_1, cột_2,... FROM tên_bảng;
+->chỉ định cột muốn truy vấn từ bảng
+
+  * ->truy vấn tất cả các cột
+
+
+  tên thay thế cho cột ( tên tồn tại tạm thời trong quá trình truy vấn)
+	SELECT tên_cột AS tên_thay_thế FROM tên_bảng;
+hoặc    SELECT tên_cột tên_thay thế FROM tên_bảng;
+  tên thay thế cho bảng
+	SELECT danh_sách_cột FROM tên_bảng AS tên_thay_thế;
+hoặc    SELECT danh_sách_cột FROM tên_bảng tên_thay_thế;
+
+
+		toán tử CAST: 
+	chuyển đổi giá trị của 1 loại dl thành 1 loại dl khác
+	CAST ( biểu_thức AS loại_dl_đích );
+hoặc    biểu_thức :: loại_dl_đích;
+->chỉ định 1 biểu thức có thể là hằng số,cột bảng,biểu thức ước lượng thành giá trị
+ chỉ định kiểu dl muốn chuyển đổi kết quả của biểu thức
+
+
+  sau khi dùng SELECT với 1 biểu thức thì có thể bỏ qua mđ FROM 
+vì câu lệnh không đề cập đến bảng nào
+	SELECT biểu_thức AS tên_cột;
+
+-nếu 1 toán hạng của bất kì toán tử nào NULL thì kq là NULL
+
+
+		ROUND():
+	ROUND(source,n)
+- source: đối số nguồn là 1 số hoặc biểu thức số sẽ được làm tròn
+- n: là 1 số nguyên xác định số vị trí thập phân sau khi làm tròn
+nếu bỏ n thì giá trị mặc định là 0
+
+
+		ORDER BY: 
+	sắp xếp các hàng trả về từ lệnh select
+	SELECT cột_1, cột_2
+	FROM tên_bảng
+	ORDER BY cột_1 ASC, cột_2 DESC;
+- ASC: sắp xếp theo thứ tự tăng dần
+- DESC: sắp xếp theo thứ tự giảm dần 
+->nếu để trống thì mặc định là ASC
+
+
+  		SELECT DISTINCT: 
+	hiển thị kết quả không bị trùng lặp ( giữ 1 hàng trong nhóm trùng lặp )
+	SELECT DISTINCT cột_1, cột_2 FROM tên_bảng;
+-> nếu nhiều cột thì sẽ kết hợp các giá trị trong các cột để đánh giá tính duy nhất của hàng

@@ -1,0 +1,70 @@
+		SELECT...WHERE: 
+	truy vấn hàng cụ thể trong bảng thỏa đk
+	SELECT danh_sách_chọn
+	FROM tên_bảng
+	WHERE điều_kiện;
+->sử dụng đk để lọc các hàng trả về
+
+
+
+		IN: 
+	trả về 1 chuỗi khớp với bất kì chuỗi nào trong bảng (so sánh = )
+	SELECT danh_sách_chọn
+	FROM tên_bảng
+	WHERE tên_cột IN ('chuỗi');
+
+
+		LIKE 
+	để tìm kiếm kết quả khớp với mẫu
+   % -> để khớp với bất kì chuỗi kí tự nào
+   _ -> để khớp với bất kì kí tự đơn nào
+	SELECT danh_sách_chọn
+	FROM tên_bảng
+	WHERE tên_cột LIKE 'mẫu'
+-> mẫu gồm 1 chuỗi và kí tự đại diện % hoặc _ 
+
+
+
+		NOT LIKE 
+	để tìm kiếm kết quả không khớp với mẫu
+		ILIKE 
+	khớp với giá trị không phân biệt chữ hoa chữ thường
+	~~ tương đương LIKE
+	~~* tương đương ILIKE
+	!~~ tương đương NOT LIKE
+	!~~* tương đương NOT ILIKE
+
+		BETWEEN: 
+	khớp với giá trị ở 1 phạm vi giá trị
+	SELECT ds_chọn
+	FROM tên_bảng
+	WHERE tên_cột BETWEEN thấp AND cao;
+
+
+		LIMIT: 
+	trả về tập hợp con các hàng được trả về bởi truy vấn
+	SELECT 
+	FROM
+	ORDER BY
+	LIMIT n;
+-> trả về n hàng tạo bởi truy vấn
+  n = 0 trả về tập hợp trống
+  n = NULL truy vấn trả về cùng 1 kq bỏ qua mđ LIMIT
+  - Thứ tự các hàng là không xđ nên cần ORDER BY để kiểm soát hàng
+
+
+		OFFSET: 
+	bỏ qua 1 số hàng trước khi trả về 
+	SELECT
+	FROM
+	ORDER BY
+	LIMIT n OFFSET m;
+-> bỏ qua m hàng trước khi trả về n hàng
+   m = 0 như không có mđ OFFSET
+
+
+		IS NULL: 
+	kiểm tra xem giá trị có phải null
+		IS NOT NULL: 
+	kiểm tra xem giá trị không phải là null
+	WHERE tên_cột IS NULL / IS NOT NULL

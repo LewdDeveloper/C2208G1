@@ -1,0 +1,27 @@
+body{
+    background-color: darkblue;
+    font-family: 'Times New Roman', Times, serif
+}
+form{
+    border: 5px black double;
+    background-color: white;
+    margin: auto;
+    width: 800px;
+   height: 300px;
+    text-align: center;
+}
+.tdLeft{
+ text-align: right;
+}
+.tdRight{
+    text-align: left;
+    float: left;
+}
+tr{
+    padding: 20px;
+    border-spacing: 5px;
+}
+.container{
+    padding-left: 100px;
+    padding-top: 20px;
+}
